@@ -1,2 +1,2 @@
 # warcapp
-Aplikacja z warcabami (checkers)
+Checkers game app
