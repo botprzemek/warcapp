@@ -13,23 +13,26 @@
 
 <body>
     <div id="main">
+        <!-- Wprowadzenie imienia -->
         <div id="submit-page">
             <h1>WarcApp</h1>
             <br>
+            <p>Wprowadź swoje imię poniżej</p>
             <div id="submit-box">
-                <p>Wprowadź swoje imię poniżej</p>
-                <input type="text" placeholder="Twoje imię">
+                <input id="tekst" type="text" placeholder="Twoje imię">
                 <br>
-                <button type="submit">Zatwierdź</button>
+                <button id="przycisk" type="submit">Zatwierdź</button>
             </div>
         </div>
-
+        <!-- Zmiana po zatwierdzeniu na landing page -->
+        <!-- Wartość z #tekst zmienia "username" na wpisany powyżej -->
         <div id="landing-page">
             <h1>WarcApp</h1>
             <br>
             <p id="welcoming">Witaj, username!</p>
         </div>
     </div>
+
 </body>
 
 </html>
