@@ -17,7 +17,7 @@ function fade(){
 function back(){
     document.querySelector("body").style.animation = "fade 1s var(--ease) both";
     setTimeout(() => {
-        window.location.href = "/";
+        window.location.href = "./";
     }, 1000);
 }
 
