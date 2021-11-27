@@ -5,6 +5,22 @@ let nickname = document.getElementById("nick").value;
 let wizyta;
 let j = 0;
 
+function fade(){
+    if(localStorage.getItem("wizyta") == null){
+        document.body.style.animation = "fade 1s var(--ease) both reverse";
+        document.body.style.display = "block";
+        setTimeout(() => {
+            document.body.style.animation = "none";
+        }, 1000);
+    }
+    else{
+        document.body.style.display = "block";
+        document.getElementById("submit-page").style.display = "none";
+        document.getElementById("landing-page").style.animation = "fade 1s var(--ease) both reverse";
+        document.getElementById("landing-page").style.display = "flex";
+    }
+}
+
 function checkname(){
     nickname = document.getElementById("nick").value;
     if(nickname !== ""){
@@ -18,11 +34,7 @@ function checkname(){
 }
 
 function fresh(){
-    if(localStorage.getItem("wizyta") == 1){
-        document.getElementById("submit-page").style.display = "none";
-        document.getElementById("landing-page").style.animation = "fade 1s var(--ease) both reverse";
-        document.getElementById("landing-page").style.display = "flex";
-    }
+    if(localStorage.getItem("wizyta") == 1)
     checkname();
 };
 
@@ -44,32 +56,53 @@ function display_submit(){
 };
 
 function swap(){
+    document.getElementById("menu_button").style.animation = "afade 1s var(--easeinout) both";
     setTimeout(() => {
         if(j !== 0){
             document.getElementById("box_h").innerHTML = "<h2>Start</h2>";
             document.getElementById("box_text").innerHTML = "<p>WarcApp to platforma dla każdego, kto chce zagrać w warcaby online</p>";
             document.getElementById("menu_button").innerHTML = "<span>Start</span>";
-            document.getElementById("menu_button").setAttribute("formaction", "html/game.html");
-            document.getElementById("form_button").setAttribute("target", "_self");
             j = 0;
         }
         else{
             document.getElementById("box_h").innerHTML = "<h2>O grze</h2>";
             document.getElementById("box_text").innerHTML = "<p>Warcaby to gra planszowa z XII wieku. Autorem strony jest Przemysław Szymański</p>";
             document.getElementById("menu_button").innerHTML = "<span>Więcej</span>";
-            document.getElementById("menu_button").setAttribute("formaction", "https://github.com/przemek3d/warcapp");
-            document.getElementById("form_button").setAttribute("target", "_blank");
             j = 1;
         }
     }, 500);
-    for(let i = 0; i < 2; i++){
+    for(let i = 0; i < 3; i++){
         document.getElementsByClassName("box_animation")[i].style.animation = "afade 1s var(--easeinout) both";
         setTimeout(() => {
             document.getElementsByClassName("box_animation")[i].style.animation = "none";
         }, 1000);
     }
 }
+
+function link(){
+    if(j !== 1){
+        document.body.style.animation = "fade 1s var(--ease) both";
+        console.log(j);
+        setTimeout(() => {
+            window.open("html/game.html", "_self");
+            document.body.style.animation = "none";
+            document.body.style.display = "none";
+        }, 1000);
+    }
+    else{
+        document.body.style.animation = "fade 1s var(--ease) both";
+        console.log(j);
+        setTimeout(() => {
+            window.open("https://github.com/przemek3d/warcapp");
+            document.body.style.animation = "none";
+            document.body.style.display = "none";
+        }, 1000);
+    }
+}
+
+fade();
 submit_button.addEventListener("click", playernickname);
 submit_button.addEventListener("click", display_submit);
 for(let i = 0; i < 2; i++)arrow_button[i].addEventListener("click", swap);
+menu_button.addEventListener("click", link);
 fresh();
