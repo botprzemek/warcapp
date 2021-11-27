@@ -190,12 +190,12 @@ p {
 }
 
 #arrow {
-  background-image: url("./img/arrow.svg");
+  background-image: url("../img/arrow.svg");
   order: 1;
 }
 
 #rarrow {
-  background-image: url("./img/rarrow.svg");
+  background-image: url("../img/rarrow.svg");
   order: 3;
 }
 

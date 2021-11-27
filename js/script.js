@@ -49,7 +49,7 @@ function swap(){
             document.getElementById("box_h").innerHTML = "<h2>Start</h2>";
             document.getElementById("box_text").innerHTML = "<p>WarcApp to platforma dla każdego, kto chce zagrać w warcaby online</p>";
             document.getElementById("menu_button").innerHTML = "<span>Start</span>";
-            document.getElementById("menu_button").setAttribute("formaction", "/game.html");
+            document.getElementById("menu_button").setAttribute("formaction", "html/game.html");
             document.getElementById("form_button").setAttribute("target", "_self");
             j = 0;
         }
