@@ -717,6 +717,13 @@ p {
 }
 
 @media all and (min-device-width: 300px) and (max-device-width: 500px) {
+  #submit-page,
+  #landing-page {
+    padding-top: 2vh;
+  }
+  #main h1 {
+    font-size: clamp(20px, 20vh, 60px);
+  }
   #box_text {
     font-size: 4vh;
     text-align: left;
@@ -748,6 +755,9 @@ p {
   #score_buttons #score_box_select {
     margin-left: 0.5vh;
     margin-right: 0.5vh;
+  }
+  #score {
+    transform: scale(80%);
   }
 }
 
