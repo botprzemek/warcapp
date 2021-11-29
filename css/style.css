@@ -451,6 +451,7 @@ p {
   .menu-box {
     width: 90%;
   }
+
   #menu {
     justify-content: stretch;
   }
@@ -459,13 +460,15 @@ p {
     width: 25px;
     height: 25px;
   }
-  .box-text {
+  #box-text {
     text-align: left;
-    font-size: 1.8em;
     padding-top: 8%;
     padding-right: 10%;
     padding-left: 10%;
     padding-bottom: 7%;
+  }
+  #box-text {
+    font-size: 0.4em;
   }
   .box-title p {
     font-size: 1em;
@@ -484,6 +487,7 @@ p {
   #score_buttons #ene {
     font-size: clamp(15px, 10vw, 12px);
     font-weight: 500;
+    margin: 3%;
     margin-right: 4%;
     margin-left: 4%;
     padding: 2%;
@@ -547,7 +551,7 @@ p {
     width: 90%;
   }
   #menu {
-    justify-content: stretch;
+    justify-content: center;
   }
   #arrow,
   #rarrow {
@@ -555,12 +559,15 @@ p {
     height: 25px;
   }
   .box-text {
-    text-align: left;
-    font-size: 1.8em;
+    text-align: justify;
     padding-top: 8%;
     padding-right: 10%;
     padding-left: 10%;
     padding-bottom: 7%;
+    font-size: 1px;
+  }
+  .box-text p {
+    font-size: 1px;
   }
   .box-title p {
     font-size: 1em;
@@ -652,6 +659,9 @@ p {
     padding-left: 8%;
     padding-bottom: 3%;
   }
+  .box-text p {
+    font-size: 0.5em;
+  }
   .box-title p {
     font-size: 1em;
   }
@@ -671,7 +681,7 @@ p {
   }
   #score_buttons #you,
   #score_buttons #ene {
-    font-size: clamp(15px, 10vw, 12px);
+    font-size: 1.2em;
     font-weight: 500;
     margin: 3%;
     margin-right: 4%;
@@ -679,19 +689,19 @@ p {
     padding: 2%;
     padding-left: 2%;
     padding-right: 2%;
-    width: 14%;
+    width: 13.7%;
     border: solid 5px #ffffff;
   }
   #score_buttons #score_box_select {
-    font-size: clamp(15px, 6vw, 8px);
+    font-size: 1.2em;
     font-weight: 500;
     margin: 3%;
-    margin-right: 2.5%;
-    margin-left: 2.5%;
+    margin-right: 2%;
+    margin-left: 2%;
     padding: 2%;
-    padding-left: 5%;
-    padding-right: 5%;
-    width: 20%;
+    padding-left: 3%;
+    padding-right: 3%;
+    width: 25%;
     border: solid 5px #ffffff;
   }
   #main_clock {
@@ -703,6 +713,41 @@ p {
   }
   #alert_button {
     padding-bottom: 3%;
+  }
+}
+
+@media all and (min-device-width: 300px) and (max-device-width: 500px) {
+  #box_text {
+    font-size: 4vh;
+    text-align: left;
+  }
+  #box_h h2 {
+    width: 100%;
+    font-size: 8vh;
+  }
+  #arrow,
+  #rarrow {
+    margin: 1vh;
+    transform: scale(75%);
+  }
+  #menu_button {
+    font-size: 3vh;
+    padding: 0.5vh;
+    padding-left: 2vh;
+    padding-right: 2vh;
+  }
+  #board {
+    width: 90vw;
+    height: 90vw;
+  }
+  #score_buttons {
+    width: 97vw;
+  }
+  #score_buttons #ene,
+  #score_buttons #you,
+  #score_buttons #score_box_select {
+    margin-left: 0.5vh;
+    margin-right: 0.5vh;
   }
 }
 
