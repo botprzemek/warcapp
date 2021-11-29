@@ -253,11 +253,24 @@ p {
 
 #score_buttons #you,
 #score_buttons #ene {
-  display: none;
+  /*display: none;*/
+  background: transparent;
+  border: solid 4px #ffffff;
+  box-shadow: none;
+  border-radius: 50px;
+  overflow: hidden;
+  color: white;
+  font-family: var(--font);
+  font-size: clamp(15px, 5vw, 20px);
+  font-weight: 500;
+  margin: 0.7%;
+  margin-right: 0.5%;
+  margin-left: 0.5%;
+  width: 10.5vh;
+  padding: 0.2%;
+  text-align: center;
 }
 
-#score_buttons #you,
-#score_buttons #ene,
 #score_buttons #score_box_select {
   background: transparent;
   border: solid 4px #ffffff;
@@ -271,7 +284,7 @@ p {
   margin: 0.7%;
   margin-right: 0.5%;
   margin-left: 0.5%;
-  width: 30vh;
+  width: 35vh;
   padding: 0.2%;
   text-align: center;
 }
@@ -469,12 +482,25 @@ p {
   }
   #score_buttons #you,
   #score_buttons #ene {
-    font-size: clamp(15px, 5vw, 20px);
+    font-size: clamp(15px, 10vw, 12px);
+    font-weight: 500;
+    margin-right: 4%;
+    margin-left: 4%;
+    padding: 2%;
+    padding-left: 2%;
+    padding-right: 2%;
+    width: 30%;
+  }
+  #score_buttons #score_box_select {
+    font-size: clamp(15px, 6vw, 8px);
     font-weight: 500;
     margin: 3%;
-    margin-right: 0.5%;
-    margin-left: 0.5%;
-    width: 150%;
+    margin-right: 2.5%;
+    margin-left: 2.5%;
+    padding: 2%;
+    padding-left: 5%;
+    padding-right: 5%;
+    width: 100%;
   }
   #score {
     scale: 75%;
@@ -494,7 +520,7 @@ p {
   }
 }
 
-@media all and (min-device-width: 350px) and (max-device-width: 800px) {
+@media all and (min-device-width: 350px) and (max-device-width: 1000px) {
   #main {
     display: flex;
     flex-direction: column;
@@ -554,16 +580,25 @@ p {
     height: auto;
   }
   #score_buttons #you,
-  #score_buttons #ene,
+  #score_buttons #ene {
+    font-size: clamp(15px, 10vw, 12px);
+    font-weight: 500;
+    margin-right: 4%;
+    margin-left: 4%;
+    padding: 2%;
+    padding-left: 2%;
+    padding-right: 2%;
+    width: 30%;
+  }
   #score_buttons #score_box_select {
-    font-size: clamp(15px, 20vw, 20px);
+    font-size: clamp(15px, 6vw, 8px);
     font-weight: 500;
     margin: 3%;
     margin-right: 2.5%;
     margin-left: 2.5%;
     padding: 2%;
-    padding-left: 10%;
-    padding-right: 10%;
+    padding-left: 5%;
+    padding-right: 5%;
     width: 100%;
   }
   #score {
@@ -635,17 +670,29 @@ p {
     height: auto;
   }
   #score_buttons #you,
-  #score_buttons #ene,
+  #score_buttons #ene {
+    font-size: clamp(15px, 10vw, 12px);
+    font-weight: 500;
+    margin: 3%;
+    margin-right: 4%;
+    margin-left: 4%;
+    padding: 2%;
+    padding-left: 2%;
+    padding-right: 2%;
+    width: 14%;
+    border: solid 5px #ffffff;
+  }
   #score_buttons #score_box_select {
-    font-size: clamp(15px, 20vw, 20px);
+    font-size: clamp(15px, 6vw, 8px);
     font-weight: 500;
     margin: 3%;
     margin-right: 2.5%;
     margin-left: 2.5%;
-    padding: 1%;
-    padding-left: 10%;
-    padding-right: 10%;
-    width: 50%;
+    padding: 2%;
+    padding-left: 5%;
+    padding-right: 5%;
+    width: 20%;
+    border: solid 5px #ffffff;
   }
   #main_clock {
     display: none;
