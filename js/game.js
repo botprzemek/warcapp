@@ -585,7 +585,7 @@ function alert(){
         document.querySelector("#game").style.animation = "alert_filter 1.5s var(--easeinout) both";
         document.querySelector("#score_buttons").style.animation = "alert_filter 1.5s var(--easeinout) both";
     setTimeout(() => {
-        if(score[0] >= 8-1){
+        if(score[0] > 8-1){
             document.getElementById("alert_h").innerHTML = "<h2>Wygrana</h2>";
         }
         else{
