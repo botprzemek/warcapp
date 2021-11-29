@@ -219,7 +219,7 @@ p {
   height: 30vw;
 }
 
-.board_box {
+#board_box {
   margin: none;
   box-sizing: border-box;
 }
@@ -253,6 +253,12 @@ p {
 
 #score_buttons #you,
 #score_buttons #ene {
+  display: none;
+}
+
+#score_buttons #you,
+#score_buttons #ene,
+#score_buttons #score_box_select {
   background: transparent;
   border: solid 4px #ffffff;
   box-shadow: none;
@@ -262,10 +268,12 @@ p {
   font-family: var(--font);
   font-size: clamp(15px, 5vw, 20px);
   font-weight: 500;
-  margin: 1%;
+  margin: 0.7%;
   margin-right: 0.5%;
   margin-left: 0.5%;
-  width: 15%;
+  width: 30vh;
+  padding: 0.2%;
+  text-align: center;
 }
 
 #main_clock {
@@ -455,11 +463,6 @@ p {
   #game {
     align-self: center;
   }
-  #fill {
-    align-self: stretch;
-    height: 100%;
-    width: 100%;
-  }
   #board {
     width: 90vw;
     height: 90vw;
@@ -542,24 +545,26 @@ p {
   #game {
     align-self: center;
   }
-  #fill {
-    align-self: stretch;
-    height: 100%;
-    width: 100%;
-  }
   #board {
     width: 90vw;
     height: 90vw;
   }
+  #score_buttons {
+    width: 100vw;
+    height: auto;
+  }
   #score_buttons #you,
-  #score_buttons #ene {
-    font-size: clamp(15px, 5vw, 14px);
+  #score_buttons #ene,
+  #score_buttons #score_box_select {
+    font-size: clamp(15px, 20vw, 20px);
     font-weight: 500;
     margin: 3%;
     margin-right: 2.5%;
     margin-left: 2.5%;
-    padding: 1%;
-    width: 90%;
+    padding: 2%;
+    padding-left: 10%;
+    padding-right: 10%;
+    width: 100%;
   }
   #score {
     scale: 75%;
@@ -625,14 +630,22 @@ p {
   #score {
     width: 30%;
   }
+  #score_buttons {
+    width: 100vw;
+    height: auto;
+  }
   #score_buttons #you,
-  #score_buttons #ene {
-    font-size: clamp(15px, 5vw, 26px);
+  #score_buttons #ene,
+  #score_buttons #score_box_select {
+    font-size: clamp(15px, 20vw, 20px);
     font-weight: 500;
     margin: 3%;
-    margin-right: 1%;
-    margin-left: 1%;
-    width: 35%;
+    margin-right: 2.5%;
+    margin-left: 2.5%;
+    padding: 1%;
+    padding-left: 10%;
+    padding-right: 10%;
+    width: 50%;
   }
   #main_clock {
     display: none;
@@ -677,23 +690,15 @@ p {
   opacity: 1;
 }
 
-.box_select {
-  animation-name: board_box;
-  animation-duration: 1.25s;
-  animation-timing-function: var(--easeinout);
-  animation-fill-mode: both;
-  animation-iteration-count: infinite;
-  animation-delay: 100ms;
-}
-
-.checker_black:hover,
-.checker_white:hover {
+.cell_white:hover,
+.cell_black:hover {
   animation-name: board_box;
   animation-iteration-count: infinite;
   animation-timing-function: var(--easeinout);
   animation-duration: 1s;
   animation-delay: 200ms;
   animation-fill-mode: both;
+  cursor: pointer;
 }
 
 #alert_button:hover {
@@ -744,10 +749,10 @@ p {
 @keyframes board_box {
   from,
   to {
-    background-color: rgba(144, 238, 144, 1);
+    background-color: rgba(144, 238, 144, 0.7);
   }
   50% {
-    background-color: rgba(144, 238, 144, 0.5);
+    background-color: rgba(144, 238, 144, 0.3);
   }
 }
 

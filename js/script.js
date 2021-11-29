@@ -82,7 +82,6 @@ function swap(){
 function link(){
     if(j !== 1){
         document.body.style.animation = "fade 1s var(--ease) both";
-        console.log(j);
         setTimeout(() => {
             window.open("html/game.html", "_self");
             document.body.style.animation = "none";
@@ -91,12 +90,15 @@ function link(){
     }
     else{
         document.body.style.animation = "fade 1s var(--ease) both";
-        console.log(j);
         setTimeout(() => {
             window.open("https://github.com/przemek3d/warcapp");
             document.body.style.animation = "none";
             document.body.style.display = "none";
         }, 1000);
+        setTimeout(() => {
+            document.body.style.display = "block";
+        }, 1000);
+        document.body.style.display = "block";
     }
 }
 
