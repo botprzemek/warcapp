@@ -1,0 +1,59 @@
+{
+    "name": "@warcapp/client",
+    "version": "0.1.0",
+    "description": "WarcApp Client",
+    "license": "Apache-2.0",
+    "private": true,
+    "homepage": "https://github.com/botprzemek/warcapp",
+    "bugs": {
+        "url": "https://github.com/botprzemek/warcapp",
+        "email": "przemek@notbyte.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/botprzemek/warcapp.git"
+    },
+    "author": {
+        "name": "botprzemek",
+        "email": "przemek@notbyte.com"
+    },
+    "contributors": [
+        {
+            "name": "botprzemek",
+            "email": "przemek@notbyte.com",
+            "url": "https://www.github.com/botprzemek/"
+        }
+    ],
+    "type": "module",
+    "scripts": {
+        "build": "tsc && vite build",
+        "dev": "vite",
+        "test": "mocha"
+    },
+    "engines": {
+        "node": ">=23.0.0",
+        "npm": ">=11.0.0"
+    },
+    "devDependencies": {
+        "typescript": "~5.8.3",
+        "vite": "^7.0.0"
+    },
+    "prettier": {
+        "bracketSpacing": true,
+        "printWidth": 80,
+        "semi": true,
+        "singleQuote": false,
+        "tabWidth": 4,
+        "trailingComma": "none"
+    },
+    "mocha": {
+        "extension": [
+            "ts"
+        ],
+        "require": "tsx",
+        "reporter": "spec",
+        "spec": [
+            "src/test/**/*.ts"
+        ]
+    }
+}
