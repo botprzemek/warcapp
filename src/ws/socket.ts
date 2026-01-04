@@ -3,6 +3,7 @@ import { decode, read } from "@/data/buffer";
 
 import { IncomingMessage } from "node:http";
 import { Duplex } from "node:stream";
+import { canParse } from "@/utils/json";
 
 interface HeadersData {
     privateKey: string;
@@ -28,6 +29,10 @@ function headers(data: HeadersData): string {
 }
 
 function readable(socket: Duplex): void {
+    if (!socket) {
+        return;
+    }
+
     socket.read(0x01);
     const [length] = socket.read(0x01);
     const lengthIndicatorInBits: number = length - FIRST_BIT;
@@ -48,6 +53,10 @@ function readable(socket: Duplex): void {
 
     const decoded: Buffer = decode(encoded, maskKey);
     const received: string = decoded.toString("utf-8");
+
+    if (!canParse(received)) {
+        return;
+    }
 
     const data = JSON.parse(received);
 

@@ -1,34 +1,36 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta content="IE=edge" http-equiv="X-UA-Compatible">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>WebSocket Client</title>
-</head>
-<body>
-<output id="messages"></output>
-<script>
-    const HOST = "127.0.0.1";
-    const PORT = 3000;
+    <head>
+        <meta charset="UTF-8" />
+        <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <title>WebSocket Client</title>
+    </head>
+    <body>
+        <output id="messages"></output>
+        <script>
+            const HOST = "127.0.0.1";
+            const PORT = 3000;
 
-    const messages = document.querySelector("#messages");
-    const socket = new WebSocket(`ws://${HOST}:${PORT}/`);
+            const messages = document.querySelector("#messages");
+            const socket = new WebSocket(`ws://${HOST}:${PORT}/`);
 
-    socket.onopen = (event) => {
-        console.log("Server connected successfully!");
-        
-        const data = {
-            id: Math.round(Math.random() * 100),
-            name: "Testing Name"
-        };
+            socket.onopen = (event) => {
+                console.log("Server connected successfully!");
 
-        socket.send(JSON.stringify(data));
-    }
+                const data = {
+                    id: Math.round(Math.random() * 100),
+                    name: "Testing Name",
+                };
 
-    socket.onmessage = (message) => messages.innerHTML = message.data;
-    socket.onerror = (error) => console.error("An error occurred!", error);
-    socket.onclose = (event) => console.log("Server disconnected successfully!");
-</script>
-</body>
+                socket.send(JSON.stringify(data));
+            };
+
+            socket.onmessage = (message) => (messages.innerHTML = message.data);
+            socket.onerror = (error) =>
+                console.error("An error occurred!", error);
+            socket.onclose = (event) =>
+                console.log("Server disconnected successfully!");
+        </script>
+    </body>
 </html>
